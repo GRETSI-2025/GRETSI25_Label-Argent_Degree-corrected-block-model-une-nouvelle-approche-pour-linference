@@ -4,3 +4,5 @@
 /pysbm/__pycache__
 /pysbm/sbm/__pycache__
 /Tests/__pycache__
+/.idea
+/__pycache__
