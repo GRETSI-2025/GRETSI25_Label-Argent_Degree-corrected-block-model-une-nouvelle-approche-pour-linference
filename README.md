@@ -1,13 +1,22 @@
-# Application of OtrisymNMF in Community Detection with the degree corrected block model  
+# Degree-Corrected Block Model: A New Approach and Efficient Initialization for Inference
 
 
-This **Python** code contains the tests conducted for the Gretsi preprint paper. 
+This **Python** code contains the tests conducted for a paper submission for **GRETSI 25**.
 We use **OtrisymNMF** as a **degree corrected block model (DCBM)** to detect communities in several benchmark networks, including the LFR benchmark. 
 We also demonstrate that our initialization, based on separable NMF, significantly improves the results of classical inference methods for the **DCBM of Karrer and Newman**.
 
 All the tools for OtrisymNMF are available in the Python package **OtrisymNMF**. For Karrer and Newman's DCBM and inference methods, we used the **pysbm** package.
 The Karate notebook compares the use of OtrisymNMF and Karrer and Newman's DCBM on the **Karate Club network**.
 The Tests folder contains experiments demonstrating that the SVCA initialization significantly improves the results of inference methods.
+
+# Reproducing the Results
+
+To reproduce the results:
+
+- **LFR Graphs Tests (Figure 2):** Run the script located at `Tests/LFR_benchmark.py` and select the desired value for $mu.
+- **Karate Club (Figure 3):** Open and run the notebook `Karate.ipynb`.
+- **Scotland Corporate Interlock Network Tests:** Execute the script `Tests/Scotland_test.py`.
+
 
 ## OtrisymNMF
 This package provides implementations of the **Orthogonal Symmetric Nonnegative Matrix Tri-Factorization** (OtrisymNMF) algorithm  as proposed in the paper:
