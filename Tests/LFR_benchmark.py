@@ -56,7 +56,10 @@ def main(list_mu):
 
         }
 
-        for G in graphs:
+        for idx, G in enumerate(graphs, start=1):
+
+            print(f"Processed {idx} out of {len(graphs)} graphs.")
+
             labels = [G.nodes[v]['community'] for v in sorted(G.nodes)]
             r = max(labels)
 
