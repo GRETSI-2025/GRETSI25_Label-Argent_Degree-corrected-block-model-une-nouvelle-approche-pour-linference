@@ -38,10 +38,10 @@ def read_graphs_from_files(graphs_folder, n):
     return graphs
 
 
-def main():
+def main(list_mu):
     """ Test LFR benchmark """
     n = 1000
-    for mu in np.arange(0, 0.8, 0.1):
+    for mu in list_mu:
         graphs_folder = f"../Data/LFR/mu_{mu:.1f}"
         graphs = read_graphs_from_files(graphs_folder, n)
         results = {
@@ -68,7 +68,7 @@ def main():
             NMI=normalized_mutual_info_score(labels,KLG_partition)
             results["KL_G"]["NMI"].append(NMI)
             results["KL_G"]["Time"].append(end_time-start_time)
-            print(NMI)
+            #print(NMI)
 
             # KL_EM
             start_time = time.time()
@@ -78,7 +78,7 @@ def main():
             NMI = normalized_mutual_info_score(labels, EM_partition)
             results["KL_EM"]["NMI"].append(NMI)
             results["KL_EM"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
             # MHA250
             start_time = time.time()
@@ -88,7 +88,7 @@ def main():
             NMI = normalized_mutual_info_score(labels, MHA_partition)
             results["MHA250k"]["NMI"].append(NMI)
             results["MHA250k"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
             #OtrisymNMF
             X = nx.adjacency_matrix(G, nodelist=sorted(G.nodes))
@@ -99,7 +99,7 @@ def main():
             NMI = normalized_mutual_info_score(labels, v_best)
             results["OtrisymNMF"]["NMI"].append(NMI)
             results["OtrisymNMF"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
 
             #SVCA only
@@ -110,7 +110,7 @@ def main():
             end_time = time.time()
             results["SVCA"]["NMI"].append(NMI)
             results["SVCA"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
             # KL_G initialized by SVCA
             start_time = time.time()
@@ -120,7 +120,7 @@ def main():
             NMI = normalized_mutual_info_score(labels, KLG_partition)
             results["KL_G_SVCA"]["NMI"].append(NMI)
             results["KL_G_SVCA"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
             # KL_EM initialized by SVCA
             start_time = time.time()
@@ -130,7 +130,7 @@ def main():
             NMI = normalized_mutual_info_score(labels, EM_partition)
             results["KL_EM_SVCA"]["NMI"].append(NMI)
             results["KL_EM_SVCA"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
             # MHA250 initialized by SVCA
             start_time = time.time()
@@ -141,7 +141,7 @@ def main():
             NMI = normalized_mutual_info_score(labels, MHA_partition)
             results["MHA250k_SVCA"]["NMI"].append(NMI)
             results["MHA250k_SVCA"]["Time"].append(end_time - start_time)
-            print(NMI)
+            #print(NMI)
 
         summary = {}
         for algo, data in results.items():
@@ -165,5 +165,10 @@ def main():
 
 
 if __name__ == "__main__":
+
+    #Options TEST
+    list_mu = [0, 0.1]  # mu between 0 and 0.6
+
     random.seed(42)  # Fixer la seed
-    main()
+    main(list_mu)
+
