@@ -47,6 +47,11 @@ def main(graph, clusters):
     }
     for itt in range(nbr_tests):
 
+        if itt % (nbr_tests // 10) == 0:  # Afficher tous les 10 %
+            print(f"Test completed: {itt / nbr_tests * 100:.0f}%")
+
+
+
         # KL_EM
         EM_partition = DC_BM(graph, r, pysbm.DegreeCorrectedUnnormalizedLogLikelyhood, pysbm.EMInference, numTrials=10,
                              init_method="random", tri=False)
