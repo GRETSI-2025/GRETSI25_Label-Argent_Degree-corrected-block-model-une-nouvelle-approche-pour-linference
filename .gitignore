@@ -6,3 +6,7 @@
 /Tests/__pycache__
 /.idea
 /__pycache__
+/venv
+/.ipynb_checkpoints
+/OtrisymNMF/OtrisymNMF.egg-info
+/pysbm/pysbm.egg-info

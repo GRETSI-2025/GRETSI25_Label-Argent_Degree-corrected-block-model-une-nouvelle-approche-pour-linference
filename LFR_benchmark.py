@@ -42,7 +42,7 @@ def main(list_mu):
     """ Test LFR benchmark """
     n = 1000
     for mu in list_mu:
-        graphs_folder = f"../Data/LFR/mu_{mu:.1f}"
+        graphs_folder = f"Data/LFR/mu_{mu:.1f}"
         graphs = read_graphs_from_files(graphs_folder, n)
         results = {
             "OtrisymNMF": {"NMI": [], "Time": []},

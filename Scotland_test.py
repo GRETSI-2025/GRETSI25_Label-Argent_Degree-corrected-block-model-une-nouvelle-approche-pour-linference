@@ -8,7 +8,7 @@ from sklearn.metrics import normalized_mutual_info_score
 import random
 
 def read_graph():
-    file_path = "../Data/Scotland.net"
+    file_path = "Data/Scotland.net"
     G = nx.read_pajek(file_path)
     G = nx.Graph(G)
     clusters = G.nodes
