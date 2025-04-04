@@ -7,18 +7,67 @@ We also demonstrate that our initialization, based on separable NMF, significant
 
 All the tools for OtrisymNMF are available in the Python package **OtrisymNMF**. For Karrer and Newman's DCBM and inference methods, we used the **pysbm** package.
 The Karate notebook compares the use of OtrisymNMF and Karrer and Newman's DCBM on the **Karate Club network**.
-The Tests folder contains experiments demonstrating that the SVCA initialization significantly improves the results of inference methods.
+The other files contain experiments demonstrating that the SVCA initialization significantly improves the results of inference methods.
 
-# Reproducing the Results
+# Reproduce the results
 
-To reproduce the results:
+## 🔧 Requirements
 
-- **LFR Graphs Tests (Figure 2):** Run the script located at `Tests/LFR_benchmark.py` and select the desired value for $mu.
-- **Karate Club (Figure 3):** Open and run the notebook `Karate.ipynb`.
-- **Scotland Corporate Interlock Network Tests:** Execute the script `Tests/Scotland_test.py`.
+- **Python 3.9** (⚠️ Not compatible with Python 3.10+ because of the package pysbm)
+- A virtual environment is recommended.
+
+## 📦 Installation
+
+1. **Clone the repository**:
+
+```bash
+git clone https://github.com/Alexia1305/DCBM_OtrisymNMF.git
+cd DCBM_OtrisymNMF
+```
+
+2. **Create and activate a virtual environment**:
+
+```bash
+python3.9 -m venv env
+source env/bin/activate       # on macOS/Linux
+env\Scripts\activate        # on Windows
+```
+
+3. **Install dependencies**:
+
+```bash
+pip install -r requirements.txt
+```
 
 
-## OtrisymNMF
+## 🚀 Run Tests
+
+### Karate Club (Figure 3)
+
+To run the `Karate.ipynb` notebook:
+
+1. Activate your virtual environment.
+2. Launch Jupyter:
+
+```bash
+jupyter notebook
+```
+
+3. Open the `Karate.ipynb` file from the interface and execute the cells.
+
+### LFR Graphs Tests
+
+Run the script and select the desired value for $mu.
+
+```bash
+python LFR_benchmark.py
+```
+### Scotland Corporate Interlock Network Tests
+```bash
+python Scotland_test.py
+```
+
+# OtrisymNMF
 This package provides implementations of the **Orthogonal Symmetric Nonnegative Matrix Tri-Factorization** (OtrisymNMF) algorithm  as proposed in the paper:
 
 **Dache, Alexandra, Arnaud Vandaele, and Nicolas Gillis.**  
@@ -41,7 +90,7 @@ The **OtrisymNMF** package also includes the **SVCA** algorithm to initialize th
 
 
 
-## pysbm
+# pysbm
 A Python Package for Stochastic Block Model Inference by 
 
 Funke T, Becker T (2019) Stochastic block models: A comparison of variants and inference methods. 
