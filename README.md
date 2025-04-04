@@ -28,8 +28,7 @@ cd DCBM_OtrisymNMF
 2. **Create and activate a virtual environment**:
 
 ```bash
-python3.9 -m venv env
-source env/bin/activate       # on macOS/Linux
+py -3.9 -m venv env
 env\Scripts\activate        # on Windows
 ```
 
