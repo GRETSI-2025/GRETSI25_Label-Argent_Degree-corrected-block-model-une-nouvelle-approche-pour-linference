@@ -13,7 +13,7 @@ The other files contain experiments demonstrating that the SVCA initialization s
 
 ## 🔧 Requirements
 
-- **Python 3.9** (⚠️ Not compatible with Python 3.10+ because of the package pysbm)
+- **Python 3.9** (⚠️ Not compatible with Python 3.10+ for graph display)
 - A virtual environment is recommended.
 
 ## 📦 Installation
