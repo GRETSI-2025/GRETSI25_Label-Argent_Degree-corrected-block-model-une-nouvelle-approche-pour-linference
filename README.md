@@ -95,6 +95,9 @@ A Python Package for Stochastic Block Model Inference by
 Funke T, Becker T (2019) Stochastic block models: A comparison of variants and inference methods. 
 PLoS ONE 14(4): e0215296. https://doi.org/10.1371/journal.pone.0215296
 
+available under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). 
+The original code can be found at: https://github.com/funket/pysbm.
+
 They implement the stochastic block model variants from the following publications:
 
 - Karrer B, Newman ME. Stochastic blockmodels and community structure in networks. Physical Review E. 2011; 83(1):016107. https://doi.org/10.1103/PhysRevE.83.016107 
