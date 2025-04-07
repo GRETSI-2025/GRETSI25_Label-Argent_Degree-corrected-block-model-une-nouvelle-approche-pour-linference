@@ -46,11 +46,11 @@ def main(list_mu):
         graphs = read_graphs_from_files(graphs_folder, n)
         results = {
             "OtrisymNMF": {"NMI": [], "Time": []},
-            "KL_G": {"NMI": [], "Time": []},
+            "KN": {"NMI": [], "Time": []},
             "KL_EM": {"NMI": [], "Time": []},
             "MHA250k": {"NMI": [], "Time": []},
             "SVCA": {"NMI": [], "Time": []},
-            "KL_G_SVCA": {"NMI": [], "Time": []},
+            "KN_SVCA": {"NMI": [], "Time": []},
             "KL_EM_SVCA": {"NMI": [], "Time": []},
             "MHA250k_SVCA": {"NMI": [], "Time": []},
 
@@ -63,14 +63,14 @@ def main(list_mu):
             labels = [G.nodes[v]['community'] for v in sorted(G.nodes)]
             r = max(labels)
 
-            # KL_G
+            # KN
             start_time=time.time()
             KLG_partition=DC_BM(G, r, pysbm.DegreeCorrectedUnnormalizedLogLikelyhood,pysbm.KarrerInference, numTrials=10,
                                 init_method="random")
             end_time=time.time()
             NMI=normalized_mutual_info_score(labels,KLG_partition)
-            results["KL_G"]["NMI"].append(NMI)
-            results["KL_G"]["Time"].append(end_time-start_time)
+            results["KN"]["NMI"].append(NMI)
+            results["KN"]["Time"].append(end_time-start_time)
             #print(NMI)
 
             # KL_EM
@@ -115,14 +115,14 @@ def main(list_mu):
             results["SVCA"]["Time"].append(end_time - start_time)
             #print(NMI)
 
-            # KL_G initialized by SVCA
+            # KN initialized by SVCA
             start_time = time.time()
             KLG_partition = DC_BM(G, r, pysbm.DegreeCorrectedUnnormalizedLogLikelyhood, pysbm.KarrerInference,
                                   numTrials=10, init_method="SVCA")
             end_time = time.time()
             NMI = normalized_mutual_info_score(labels, KLG_partition)
-            results["KL_G_SVCA"]["NMI"].append(NMI)
-            results["KL_G_SVCA"]["Time"].append(end_time - start_time)
+            results["KN_SVCA"]["NMI"].append(NMI)
+            results["KN_SVCA"]["Time"].append(end_time - start_time)
             #print(NMI)
 
             # KL_EM initialized by SVCA
@@ -170,7 +170,7 @@ def main(list_mu):
 if __name__ == "__main__":
 
     #Options TEST
-    list_mu = [0, 0.1]  # mu between 0 and 0.6
+    list_mu = [ 0.4]  # mu between 0 and 0.6
 
     random.seed(42)  # Fixer la seed
     main(list_mu)

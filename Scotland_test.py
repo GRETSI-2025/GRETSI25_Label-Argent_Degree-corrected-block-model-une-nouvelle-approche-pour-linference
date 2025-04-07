@@ -98,6 +98,6 @@ def main(graph, clusters):
 
 
 if __name__ == "__main__":
-    random.seed(13)  # Fixer la seed
+    random.seed(15)  # Fixer la seed
     graph, labels = read_graph()
     main(graph, labels)
