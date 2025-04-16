@@ -1,103 +1,104 @@
-# Degree-Corrected Block Model: A New Approach and Efficient Initialization for Inference
+# Degree-corrected block model : une nouvelle approche et une initialisation efficace pour l’inférence
+
+Ce code **Python** contient les tests réalisés pour une soumission d’article au **GRETSI 25**.  
+Nous utilisons **OtrisymNMF** comme **degree corrected block model (DCBM)** pour détecter des communautés dans plusieurs réseaux de référence, y compris le benchmark LFR.  
+Nous montrons également que notre initialisation, basée sur la NMF séparable, améliore significativement les résultats des méthodes d’inférence classiques pour le **DCBM de Karrer et Newman**.
+
+Tous les outils pour **OtrisymNMF** sont disponibles dans le package Python **OtrisymNMF**.  
+Pour le DCBM de Karrer et Newman et les méthodes d’inférence associées, nous avons utilisé le package **pysbm**.  
+Le notebook **Karate** compare l’utilisation d’**OtrisymNMF** et du DCBM de Karrer et Newman sur le **réseau Karate Club**.  
+Les autres fichiers contiennent des expériences montrant que l’initialisation **SVCA** améliore significativement les résultats des méthodes d’inférence.
 
 
-This **Python** code contains the tests conducted for a paper submission for **GRETSI 25**.
-We use **OtrisymNMF** as a **degree corrected block model (DCBM)** to detect communities in several benchmark networks, including the LFR benchmark. 
-We also demonstrate that our initialization, based on separable NMF, significantly improves the results of classical inference methods for the **DCBM of Karrer and Newman**.
+# Reproduire les résultats
 
-All the tools for OtrisymNMF are available in the Python package **OtrisymNMF**. For Karrer and Newman's DCBM and inference methods, we used the **pysbm** package.
-The Karate notebook compares the use of OtrisymNMF and Karrer and Newman's DCBM on the **Karate Club network**.
-The other files contain experiments demonstrating that the SVCA initialization significantly improves the results of inference methods.
+## 🔧 Prérequis
 
-# Reproduce the results
-
-## 🔧 Requirements
-
-- **Python 3.9** (⚠️ Not compatible with Python 3.10+ for graph display)
-- A virtual environment is recommended.
+- **Python 3.9** (⚠️ Non compatible avec Python 3.10+ pour l’affichage des graphes)
+- Il est recommandé d’utiliser un environnement virtuel.
 
 ## 📦 Installation
 
-1. **Clone the repository**:
+1. **Cloner le dépôt** :
 
 ```bash
 git clone https://github.com/Alexia1305/DCBM_OtrisymNMF.git
 cd DCBM_OtrisymNMF
 ```
 
-2. **Create and activate a virtual environment**:
+2. **Créer et activer l'environnement virtuel**:
 
 ```bash
 py -3.9 -m venv env
 env\Scripts\activate        # on Windows
 ```
 
-3. **Install dependencies**:
+3. **Installer les dépendances**:
 
 ```bash
 pip install -r requirements.txt
 ```
 
 
-## 🚀 Run Tests
+## 🚀 Lancer les tests
 
 ### Karate Club (Figure 3)
 
-To run the `Karate.ipynb` notebook:
+Pour exécuter le notebook `Karate.ipynb`:
 
-1. Activate your virtual environment.
-2. Launch Jupyter:
+1. Activer l'environnement virtuel.
+2. Lancer Jupyter :
 
 ```bash
 jupyter notebook
 ```
 
-3. Open the `Karate.ipynb` file from the interface and execute the cells.
+3. Ouvrez le fichier `Karate.ipynb` depuis l'interface et exécutez les cellules.
 
-### LFR Graphs Tests
+### Tests sur les graphes LFR
 
-Run the script and select the desired value for $mu.
+Lancez le script et sélectionnez la valeur souhaitée pour $mu.
 
 ```bash
 python LFR_benchmark.py
 ```
-### Scotland Corporate Interlock Network Tests
+### Test sur le Scotland Corporate Interlock Network
 ```bash
 python Scotland_test.py
 ```
 
 # OtrisymNMF
-This package provides implementations of the **Orthogonal Symmetric Nonnegative Matrix Tri-Factorization** (OtrisymNMF) algorithm  as proposed in the paper:
+Ce package contient l'implémentation de l'algorithme **Orthogonal Symmetric Nonnegative Matrix Tri-Factorization** (OtrisymNMF) tel que proposé dans l'article:
 
 **Dache, Alexandra, Arnaud Vandaele, and Nicolas Gillis.**  
 *"Orthogonal Symmetric Nonnegative Matrix Tri-Factorization."*  
 IEEE International Workshop on Machine Learning for Signal Processing (MLSP), 2024.  
 Institute of Electrical and Electronics Engineers (IEEE), United States.
 
-The algorithm aims to solve the following optimization problem:
+L’algorithme vise à résoudre le problème d’optimisation suivant :
 
 \[
 \min_{W \geq 0, S \geq 0} \|X - WSW^T\|_F^2 \quad \text{s.t.} \quad W^TW = I
 \]
 
-Where:
-- **X** is a given symmetric nonnegative matrix (e.g., adjacency matrix of an undirected graph).
-- **W** is a matrix representing the assignment of elements to **r** communities.
-- **S** is a central matrix describing interactions between communities.
+Où :
+- **X** est une matrice symétrique non négative donnée (par exemple, une matrice d’adjacence d'un graphe non orienté).
+- **W** est une matrice représentant l’affectation des éléments à **r** communautés.
+- **S** est une matrice centrale décrivant les interactions entre les communautés.
 
-The **OtrisymNMF** package also includes the **SVCA** algorithm to initialize the inference.
-
+Le package **OtrisymNMF** inclut également l’algorithme **SVCA** pour initialiser l’inférence.
 
 
 # pysbm
-A Python Package for Stochastic Block Model Inference by 
+Un package Python pour l’inférence de **Stochastic Block Models (SBM)** développé par :
 
 Funke T, Becker T (2019) Stochastic block models: A comparison of variants and inference methods. 
 PLoS ONE 14(4): e0215296. https://doi.org/10.1371/journal.pone.0215296
 
-available under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). 
-The original code can be found at: https://github.com/funket/pysbm.
+Disponible sous licence **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**.  
+Le code original est disponible ici : https://github.com/funket/pysbm.
 
+Ils implémentent les variantes des stochastic block models issues des publications suivantes :
 They implement the stochastic block model variants from the following publications:
 
 - Karrer B, Newman ME. Stochastic blockmodels and community structure in networks. Physical Review E. 2011; 83(1):016107. https://doi.org/10.1103/PhysRevE.83.016107 
