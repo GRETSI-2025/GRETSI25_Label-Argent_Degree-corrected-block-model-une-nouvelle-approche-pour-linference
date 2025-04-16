@@ -77,9 +77,9 @@ Institute of Electrical and Electronics Engineers (IEEE), United States.
 
 L’algorithme vise à résoudre le problème d’optimisation suivant :
 
-\[
+$$
 \min_{W \geq 0, S \geq 0} \|X - WSW^T\|_F^2 \quad \text{s.t.} \quad W^TW = I
-\]
+$$
 
 Où :
 - **X** est une matrice symétrique non négative donnée (par exemple, une matrice d’adjacence d'un graphe non orienté).
