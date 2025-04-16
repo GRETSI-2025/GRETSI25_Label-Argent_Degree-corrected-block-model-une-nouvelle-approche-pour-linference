@@ -1,6 +1,6 @@
 # Degree-corrected block model : une nouvelle approche et une initialisation efficace pour l’inférence
 
-Ce code **Python** contient les tests réalisés pour une soumission d’article au **GRETSI 25**.  
+Ce code **Python** contient les tests réalisés pour un article soumis au **GRETSI 25**.  
 Nous utilisons **OtrisymNMF** comme **degree corrected block model (DCBM)** pour détecter des communautés dans plusieurs réseaux de référence, y compris le benchmark LFR.  
 Nous montrons également que notre initialisation, basée sur la NMF séparable, améliore significativement les résultats des méthodes d’inférence classiques pour le **DCBM de Karrer et Newman**.
 
@@ -99,7 +99,6 @@ Disponible sous licence **Creative Commons Attribution-ShareAlike 4.0 Internatio
 Le code original est disponible ici : https://github.com/funket/pysbm.
 
 Ils implémentent les variantes des stochastic block models issues des publications suivantes :
-They implement the stochastic block model variants from the following publications:
 
 - Karrer B, Newman ME. Stochastic blockmodels and community structure in networks. Physical Review E. 2011; 83(1):016107. https://doi.org/10.1103/PhysRevE.83.016107 
 - Peixoto TP. Entropy of stochastic blockmodel ensembles. Physical Review E. 2012; 85(5):056122. https://doi.org/10.1103/PhysRevE.85.056122
