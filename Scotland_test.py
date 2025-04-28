@@ -53,27 +53,27 @@ def main(graph, clusters):
 
 
         # KL_EM
-        EM_partition = DC_BM(graph, r, pysbm.DegreeCorrectedUnnormalizedLogLikelyhood, pysbm.EMInference, numTrials=10,
+        EM_partition = DC_BM(graph, r, pysbm.DegreeCorrectedUnnormalizedLogLikelyhood, pysbm.EMInference, numTrials=5,
                              init_method="random", tri=False)
         NMI = normalized_mutual_info_score(clusters, EM_partition)
         results["KL_EM"]["NMI"].append(NMI)
 
         # OtrisymNMF
         X = nx.adjacency_matrix(graph)
-        w_best, v_best, S_best, error_best = OtrisymNMF.OtrisymNMF_CD(X, r, init_method="random", numTrials=10, verbosity=0)
+        w_best, v_best, S_best, error_best = OtrisymNMF.OtrisymNMF_CD(X, r, init_method="random", numTrials=5, verbosity=0)
         NMI = normalized_mutual_info_score(clusters, v_best)
         results["OtrisymNMF"]["NMI"].append(NMI)
 
         # KL_EM initialized by SVCA
 
         EM_partition = DC_BM(graph, r, pysbm.DegreeCorrectedUnnormalizedLogLikelyhood, pysbm.EMInference,
-                             numTrials=10, init_method="SVCA", tri=False)
+                             numTrials=5, init_method="SVCA", tri=False)
         NMI = normalized_mutual_info_score(clusters, EM_partition)
         results["KL_EM_SVCA"]["NMI"].append(NMI)
 
         # OtrisymNMF initialized by SVCA
         X = nx.adjacency_matrix(graph)
-        w_best, v_best, S_best, error_best = OtrisymNMF.OtrisymNMF_CD(X, r, init_method="SVCA", numTrials=10,verbosity=0)
+        w_best, v_best, S_best, error_best = OtrisymNMF.OtrisymNMF_CD(X, r, init_method="SVCA", numTrials=5,verbosity=0)
         NMI = normalized_mutual_info_score(clusters, v_best)
         results["OtrisymNMF_SVCA"]["NMI"].append(NMI)
 
@@ -99,5 +99,6 @@ def main(graph, clusters):
 
 if __name__ == "__main__":
     random.seed(15)  # Fixer la seed
+    np.random.seed(112)
     graph, labels = read_graph()
     main(graph, labels)
