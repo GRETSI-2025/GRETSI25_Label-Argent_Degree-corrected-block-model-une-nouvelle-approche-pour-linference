@@ -1,5 +1,15 @@
 # Degree-corrected block model : une nouvelle approche et une initialisation efficace pour l’inférence
 
+<hr>
+
+**_Dépôt labelisé dans le cadre du [Label Reproductible du GRESTI'25](https://gretsi.fr/colloque2025/recherche-reproductible/)_**
+
+| Label décerné | Auteur | Rapporteur | Éléments reproduits | Liens |
+|:-------------:|:------:|:----------:|:-------------------:|:------|
+| ![](label_argent.png) | Alexandra DACHE<br>[@Alexia1305](https://github.com/Alexia1305) | Laurence DENNEULIN<br>[@LaurenceDenneulin](https://github.com/LaurenceDenneulin) |  Figures 2 et 3 | 📌&nbsp;[Dépôt&nbsp;original](https://github.com/Alexia1305/DCBM_OtrisymNMF)<br>⚙️&nbsp;[Issue](https://github.com/GRETSI-2025/Label-Reproductible/issues/17)<br>📝&nbsp;[Rapport](https://github.com/akrah/test/tree/main/rapports/Rapport_issue_17) |
+
+<hr>
+
 Ce code **Python** contient les tests réalisés pour un article soumis au **GRETSI 25**.  
 Nous utilisons **OtrisymNMF** comme **degree corrected block model (DCBM)** pour détecter des communautés dans plusieurs réseaux de référence, y compris le benchmark LFR.  
 Nous montrons également que notre initialisation, basée sur la NMF séparable, améliore significativement les résultats des méthodes d’inférence classiques pour le **DCBM de Karrer et Newman**.
