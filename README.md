@@ -6,7 +6,7 @@
 
 | Label décerné | Auteur | Rapporteur | Éléments reproduits | Liens |
 |:-------------:|:------:|:----------:|:-------------------:|:------|
-| ![](label_argent.png) | Alexandra DACHE<br>[@Alexia1305](https://github.com/Alexia1305) | Laurence DENNEULIN<br>[@LaurenceDenneulin](https://github.com/LaurenceDenneulin) |  Figures 2 et 3 | 📌&nbsp;[Dépôt&nbsp;original](https://github.com/Alexia1305/DCBM_OtrisymNMF)<br>⚙️&nbsp;[Issue](https://github.com/GRETSI-2025/Label-Reproductible/issues/17)<br>📝&nbsp;[Rapport](https://github.com/akrah/test/tree/main/rapports/Rapport_issue_17) |
+| ![](label_argent.png) | Alexandra DACHE<br>[@Alexia1305](https://github.com/Alexia1305) | Laurence DENNEULIN<br>[@LaurenceDenneulin](https://github.com/LaurenceDenneulin) |  Figures 2 et 3 | 📌&nbsp;[Dépôt&nbsp;original](https://github.com/Alexia1305/DCBM_OtrisymNMF)<br>⚙️&nbsp;[Issue](https://github.com/GRETSI-2025/Label-Reproductible/issues/17)<br>📝&nbsp;[Rapport](https://github.com/GRETSI-2025/Label-Reproductible/tree/main/rapports/Rapport_issue_17) |
 
 <hr>
 
